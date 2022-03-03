@@ -36,8 +36,8 @@ public class TestWindow extends JFrame {
 		vq = new Vector<String>();	//question들을 모아둘 Vector 선언
 		vr = new Vector<String>();	//result들을 모아둘 Vector 선언
 		
-		BufferedReader qb = new BufferedReader(new InputStreamReader(new FileInputStream("Question.txt"), "UTF8"));
-		BufferedReader rb = new BufferedReader(new InputStreamReader(new FileInputStream("Result.txt"), "UTF8"));
+		BufferedReader qb = new BufferedReader(new InputStreamReader(new FileInputStream("../data/Question.txt"), "UTF8"));
+		BufferedReader rb = new BufferedReader(new InputStreamReader(new FileInputStream("../data/Result.txt"), "UTF8"));
 		
 		//Question.txt를 한줄씩 Vector vq에 추가
 		String line=null;
@@ -64,11 +64,11 @@ public class TestWindow extends JFrame {
         image = new ImageIcon[vq.size()+vr.size()];
         //이미지 로딩
       	for(int i=0 ; i<vq.size() ; i++) {
-      		String path = "Qimg"+(i+1)+".png";
+      		String path = "../data/Qimg"+(i+1)+".png";
       		image[i] = new ImageIcon(path);
       	}
       	for(int i=vq.size() ; i<vq.size()+vr.size() ; i++) {
-      		String path = "Rimg"+(i-vq.size()+1)+".png";
+      		String path = "../data/Rimg"+(i-vq.size()+1)+".png";
       		image[i] = new ImageIcon(path);
       	}
       	imagelbl = new JLabel(image[0]);	//처음 이미지
